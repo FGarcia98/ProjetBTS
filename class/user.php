@@ -25,6 +25,11 @@ class user{
                 $userinfo = $requser->fetch();
                 $_SESSION['identifiant'] = $userinfo['identifiant'];
                 echo "Vous être connecté en tant que " . $userinfo['identifiant'] . ".";
+
+                if($userinfo['isadmin']==1) //admin
+                {
+                    echo "user ou admin?";
+                }
             } else {
              echo "Identifiant ou mot de passe incorrect !";
             }
@@ -32,7 +37,11 @@ class user{
 
     public function Autorisation($identifiant, $mdp) // Florian Garcia 
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> cefeeeb04e7f9aee13b1a20d1f9fd6453c7ceee7
 
 
 
