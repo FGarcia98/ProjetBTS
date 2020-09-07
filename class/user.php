@@ -1,5 +1,6 @@
 <?php
-class user{
+class user
+{
 
     //Propiétés
     private $_identifiant;
@@ -16,54 +17,36 @@ class user{
         return $bdd;
     }
 
-    public function Connexion($identifiant, $mdp , $bdd) // Romain FLEMAL
+    public function Connexion($identifiant, $mdp, $bdd) // Romain FLEMAL
     {
-            $requser = $bdd->prepare('SELECT * FROM user WHERE "'.$identifiant.'"=`identifiant` && "'.$mdp.'"=`mdp');
-            $requser->execute(array($identifiant, $mdp));
-            $userexist = $requser->rowCount();
-            if ($userexist == 1) {
-                $userinfo = $requser->fetch();
-                $_SESSION['identifiant'] = $userinfo['identifiant'];
-                echo "Vous être connecté en tant que " . $userinfo['identifiant'] . ".";
+        $requser = $bdd->prepare('SELECT * FROM user WHERE "' . $identifiant . '"=`identifiant` && "' . $mdp . '"=`mdp');
+        $requser->execute(array($identifiant, $mdp));
+        $userexist = $requser->rowCount();
+        if ($userexist == 1) {
+            $userinfo = $requser->fetch();
+            $_SESSION['identifiant'] = $userinfo['identifiant'];
+            echo "<p>Vous être connecté en tant que " . $userinfo['identifiant'] . ",</p> ";
 
-                if($userinfo['isadmin']==1) //admin
-                {
-                    echo "user ou admin?";
-                }
-            } else {
-             echo "Identifiant ou mot de passe incorrect !";
+            if ($userinfo['isadmin'] == 1) // Proposition de mode admin si l'utilisateur en est un
+            {
+                echo "<p>Voulez vous vous connecter en tant que </p>";
+                echo "<p></p>";
+                include("modal.html");
             }
+        } else {
+            echo "Identifiant ou mot de passe incorrect !";
+        }
     }
 
-    public function Autorisation($identifiant, $mdp) // Florian Garcia 
+    public function Autorisation($identifiant, $mdp, $bdd) // Florian Garcia 
     {
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> cefeeeb04e7f9aee13b1a20d1f9fd6453c7ceee7
-
-
-
     }
 
-    public function Modification_user($identifiant, $mdp) // Florian Garcia
+    public function Modification_user($identifiant, $mdp, $bdd) // Florian Garcia
     {
-
-
-
-
     }
 
-    public function Suppression_user($identifiant, $mdp) // Romain FLEMAL
+    public function Suppression_user($identifiant, $mdp, $bdd) // Romain FLEMAL
     {
-
-
-
-
     }
-
-
 }
-
-?>

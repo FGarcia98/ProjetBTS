@@ -30,7 +30,8 @@
 
     <div class="limiter">
         <div class="container-login100">
-            <div class="wrap-login100"> <!-- Logo animé -->
+            <div class="wrap-login100">
+                <!-- Logo animé -->
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="images/img-01.png" alt="IMG">
                 </div>
@@ -56,7 +57,7 @@
                         </span>
                     </div>
                     <!-- Bouton submit pour la connexion -->
-                    <div class="container-login100-form-btn"> 
+                    <div class="container-login100-form-btn">
                         <input type="submit" value="Se connecter" class="login100-form-btn">
                         </input>
                     </div>
@@ -67,7 +68,6 @@
                         $base = $coUser->bdd();
                         $coUser->Connexion($_POST['identifiant'], $_POST['mdp'], $base);
                     } //fin du PHP pour la connection
-
                     ?>
                     <!-- Lien vers la connexion du mode admin -->
                     <div class="text-center p-t-136">
