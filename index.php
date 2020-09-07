@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require("class/user.php"); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -29,16 +30,16 @@
 
     <div class="limiter">
         <div class="container-login100">
-            <div class="wrap-login100">
+            <div class="wrap-login100"> <!-- Logo animé -->
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="images/img-01.png" alt="IMG">
                 </div>
-
+                <!-- Titre -->
                 <form action="index.php" method="POST" class="login100-form validate-form">
                     <span class="login100-form-title">
                         Connexion
                     </span>
-
+                    <!-- Champ de saisie pour le Login  -->
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                         <input class="input100" type="text" name="identifiant" placeholder="Identifiant">
                         <span class="focus-input100"></span>
@@ -46,7 +47,7 @@
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
-
+                    <!-- Champ de saisie pour le Password -->
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <input class="input100" type="password" name="mdp" placeholder="Mot de passe">
                         <span class="focus-input100"></span>
@@ -54,20 +55,21 @@
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
-
-                    <div class="container-login100-form-btn">
-                        <input type="submit" class="login100-form-btn">
+                    <!-- Bouton submit pour la connexion -->
+                    <div class="container-login100-form-btn"> 
+                        <input type="submit" value="Se connecter" class="login100-form-btn">
                         </input>
                     </div>
                     <?php // Début du PHP pour la connection
 
                     if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
-                        $coUser = new user(); //le mot de passe sont corrects, on crée l'objet user
+                        $coUser = new user(); //le mot de passe est correct, on crée l'objet user
                         $base = $coUser->bdd();
                         $coUser->Connexion($_POST['identifiant'], $_POST['mdp'], $base);
                     } //fin du PHP pour la connection
 
                     ?>
+                    <!-- Lien vers la connexion du mode admin -->
                     <div class="text-center p-t-136">
                         <a class="txt2" href="#">
                             Administration
