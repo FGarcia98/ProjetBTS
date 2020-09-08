@@ -65,8 +65,8 @@
 
                     if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
                         $coUser = new user(); //le mot de passe est correct, on crée l'objet user
-                        $base = $coUser->bdd();
-                        $coUser->Connexion($_POST['identifiant'], $_POST['mdp'], $base);
+                        $base = $coUser->Connexion();
+                        $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);
                     } //fin du PHP pour la connection
                     ?>
                     <!-- Lien vers la connexion du mode admin -->

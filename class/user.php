@@ -7,7 +7,7 @@ class user
     private $_mdp;
 
     //Methodes
-    public function bdd()
+    public function Connexion()
     {
         try {
             $bdd = new PDO('mysql:host=localhost; dbname=projetgps; charset=utf8', 'root', 'root');
@@ -17,7 +17,7 @@ class user
         return $bdd;
     }
 
-    public function Connexion($identifiant, $mdp, $bdd) // Romain FLEMAL
+    public function Autorisation($identifiant, $mdp, $bdd) // Romain FLEMAL
     {
         $requser = $bdd->prepare('SELECT * FROM user WHERE "' . $identifiant . '"=`identifiant` && "' . $mdp . '"=`mdp');
         $requser->execute(array($identifiant, $mdp));
@@ -38,9 +38,6 @@ class user
         }
     }
 
-    public function Autorisation($identifiant, $mdp, $bdd) // Florian Garcia 
-    {
-    }
 
     public function Modification_user($identifiant, $mdp, $bdd) // Florian Garcia
     {
