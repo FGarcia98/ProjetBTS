@@ -7,7 +7,7 @@ class user
     private $_mdp;
 
     //Methodes
-    public function Connexion()
+    public function Connexion() //Romain FLEMAL
     {
         try {
             $bdd = new PDO('mysql:host=localhost; dbname=projetgps; charset=utf8', 'root', 'root');
@@ -41,6 +41,7 @@ class user
 
     public function Modification_user($identifiant, $mdp, $bdd) // Florian Garcia
     {
+        
     }
 
     public function Suppression_user($identifiant, $mdp, $bdd) // Romain FLEMAL

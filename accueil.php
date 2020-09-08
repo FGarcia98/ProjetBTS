@@ -25,15 +25,13 @@
 </head>
 
 <body>
-    <?php
-    echo "Hello World !";
-    echo "<p>Vous être connecté en tant que " . $_SESSION['identifiant'] . " !</p> ";
+    <div class="limiter">
+        <div class="container-login100">
 
+            <a class="btn btn-danger" href="index.php"> deconnexion</a>
 
-
-    ?>
-
-    <a class="btn btn-danger" href="index.php"> deconnexion</a>
+        </div>
+    </div>
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
