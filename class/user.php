@@ -40,6 +40,7 @@ class user
 
     public function Autorisation($identifiant, $mdp, $bdd) // Florian Garcia 
     {
+        
     }
 
     public function Modification_user($identifiant, $mdp, $bdd) // Florian Garcia
