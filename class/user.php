@@ -7,7 +7,7 @@ class user
     private $_mdp;
 
     //Methodes
-    public function Connexion() //Romain FLEMAL
+    public function Connexionbdd() //Romain FLEMAL
     {
         try {
             $bdd = new PDO('mysql:host=localhost; dbname=projetgps; charset=utf8', 'root', 'root');
@@ -25,7 +25,7 @@ class user
         if ($userexist == 1) {
             $userinfo = $requser->fetch();
             $_SESSION['identifiant'] = $userinfo['identifiant'];
-            echo "<p>Vous être connecté en tant que " . $userinfo['identifiant'] . ",</p> ";
+            echo"Vous étes connecter en tant que". $userinfo['identifiant'] . " voulez vous "?> <a href="index.php">acceder au site?</a> <?php
 
             if ($userinfo['isadmin'] == 1) // Proposition de mode admin si l'utilisateur en est un
             {
@@ -48,3 +48,4 @@ class user
     {
     }
 }
+?>

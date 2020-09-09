@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php require("class/user.php"); ?>
 
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -28,62 +29,20 @@
 
 <body>
 
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100">
-                <!-- Logo animé -->
-                <div class="login100-pic js-tilt" data-tilt>
-                    <img src="images/img-01.png" alt="IMG">
-                </div>
-                <!-- Titre -->
-     
-                <form action="index.php" method="POST" class="login100-form validate-form">
-                    <span class="login100-form-title">
-                        Connexion
-                    </span>
-                    <!-- Champ de saisie pour le Login  -->
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="identifiant" placeholder="Identifiant">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <!-- Champ de saisie pour le Password -->
-                    <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="mdp" placeholder="Mot de passe">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <!-- Bouton submit pour la connexion -->
-                    <div class="container-login100-form-btn">
-                        <input type="submit" value="Se connecter" class="login100-form-btn">
-                        </input>
-                    </div>
-                    <?php // Début du PHP pour la connection
-
-                    if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
-                        $coUser = new user(); //le mot de passe est correct, on crée l'objet user
-                        $base = $coUser->Connexion();
-                        $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);
-                    } //fin du PHP pour la connection
-                    ?>
-                    <!-- Lien vers la connexion du mode admin -->
-                    <div class="text-center p-t-136">
-                        <a class="txt2" href="#">
-                            Administration
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
+<?php 
+     if(!isset($_SESSION['identifiant'])){
+        include("login.php");
+        
+    }
+    
+    else
+    {
+        echo $_SESSION['identifiant'];
+    }
+    
+   
+?>
+<a href="deconnexion.php">Deconexion</a>
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
