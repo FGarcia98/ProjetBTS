@@ -34,15 +34,15 @@
         include("login.php");
         
     }
-    
     else
     {
         echo $_SESSION['identifiant'];
+        ?> <a href="deconnexion.php">Deconexion</a> <?php
     }
     
    
 ?>
-<a href="deconnexion.php">Deconexion</a>
+
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>

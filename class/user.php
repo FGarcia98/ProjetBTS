@@ -25,8 +25,15 @@ class user
         if ($userexist == 1) {
             $userinfo = $requser->fetch();
             $_SESSION['identifiant'] = $userinfo['identifiant'];
-            echo"Vous étes connecter en tant que". $userinfo['identifiant'] . " voulez vous "?> <a href="index.php">acceder au site?</a> <?php
 
+            if ($userinfo['isadmin'] == 0) {
+
+                echo "Vous étes connecter en tant que " . $userinfo['identifiant'] . " voulez vous " ?> <a href="index.php">acceder au site?</a>
+
+            <?php
+
+            }
+            
             if ($userinfo['isadmin'] == 1) // Proposition de mode admin si l'utilisateur en est un
             {
                 echo "<p>Voulez vous vous connecter en tant que </p>";
@@ -41,11 +48,11 @@ class user
 
     public function Modification_user($identifiant, $mdp, $bdd) // Florian Garcia
     {
-        
     }
 
     public function Suppression_user($identifiant, $mdp, $bdd) // Romain FLEMAL
     {
     }
 }
+
 ?>

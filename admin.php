@@ -33,7 +33,7 @@
 
     ?>
 
-    <a class="btn btn-danger" href="index.php"> deconnexion</a>
+    <a class="btn btn-danger" href="deconnexion.php">Deconnexion</a>
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
