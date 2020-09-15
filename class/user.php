@@ -28,7 +28,7 @@ class user
 
             if ($userinfo['isadmin'] == 0) {
 
-                echo "Vous étes connecter en tant que " . $userinfo['identifiant'] . " voulez vous " ?> <a href="index.php">acceder au site?</a>
+                echo "Vous étes connecter en tant que " . $userinfo['identifiant'] . " voulez vous " ?> <a href="home.php">acceder au site?</a>
 
             <?php
 

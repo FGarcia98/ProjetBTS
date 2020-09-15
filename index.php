@@ -1,12 +1,10 @@
 <?php session_start(); ?>
 <?php require("class/user.php"); ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <title>ProjetGPS</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -28,7 +26,6 @@
 </head>
 
 <body>
-
 <?php 
      if(!isset($_SESSION['identifiant'])){
         include("login.php");
@@ -37,12 +34,10 @@
     else
     {
         echo $_SESSION['identifiant'];
-        ?> <a href="deconnexion.php">Deconexion</a> <?php
     }
     
    
 ?>
-
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -60,7 +55,6 @@
     </script>
     <!--===============================================================================================-->
     <script src="js/main.js"></script>
-
 </body>
 
 </html>

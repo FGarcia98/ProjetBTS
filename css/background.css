@@ -1,0 +1,12 @@
+/*HOME*/
+
+.info_GPS {
+  padding-top: 20px;
+}
+
+/*Barre navigation du haut*/
+
+.header-button {
+  display: flex;
+  flex-direction: row-reverse;
+}
