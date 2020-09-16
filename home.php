@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-<?php require("class/user.php"); ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -40,9 +39,8 @@
 
 </head>
 
-
 <body class="animsition">
-<div class="page-wrapper">
+    <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
@@ -214,9 +212,9 @@
                                     <div class="account-item clearfix js-item-menu">
 
                                         <div class="content">
-                                            <div class="api_heure h4" id="zone_api" onload="affiche_heure()"></div>
+                                        <div class="api_heure h4" id="zone_api" onload="affiche_heure()"></div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -269,44 +267,68 @@
                                 </div>
                             </div>
 
+
+
                         </div>
-                        <div class="row">
-                            <div class="col-lg-10">
-                                <div class="au-card recent-report">
-                                    <div class="au-card-inner">
-                                        <h3 class="title-2">Données GPS du bateau :</h3>
-                                        <div class="info_GPS">
-                                            <div class="col-lg-5">
-                                                <ul class="list-group">
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        Latitude :
-                                                        <span class="badge badge-primary badge-pill">2</span>
-                                                    </li>
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        Longitude :
-                                                        <span class="badge badge-primary badge-pill">1</span>
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        Vitesse :
-                                                        <span class="badge badge-primary badge-pill">14</span>
-                                                    </li>
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        Vitesse moyenne :
-                                                        <span class="badge badge-primary badge-pill">14 Km</span>
-                                                    </li>
-                                                    </li>
-                                                </ul>
+                        <?php
+                        try {
+                            // On se connecte à MySQL
+                            $bdd = new PDO('mysql:host=localhost; dbname=projetgps; charset=utf8', 'root', 'root');
+                        } catch (Exception $e) {
+                            // En cas d'erreur, on affiche un message et on arrête tout
+                            die('Erreur : ' . $e->getMessage());
+                        }
+
+                        // Si tout va bien, on peut continuer
+
+                        // On récupère tout le contenu de la table jeux_video
+                        $reponse = $bdd->query('SELECT * FROM `bateau`');
+
+                        // On affiche chaque entrée une à une
+                        while ($donnees = $reponse->fetch()) {
+                        ?> <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="au-card recent-report">
+                                        <div class="au-card-inner">
+                                            <h3 class="title-2">Données GPS du bateau :</h3>
+                                            <div class="info_GPS">
+                                                <div class="col-lg-5">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Bateau:
+                                                            <span class="badge badge-primary badge-pill">n°<?php echo $donnees['id_bateau'] ?></span>
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Position:
+                                                            <span class="badge badge-primary badge-pill"><?php echo $donnees['position'] ?></span>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Vitesse:
+                                                            <span class="badge badge-primary badge-pill"><?php echo $donnees['vitesse'] ?> km/h</span>
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Vitesse moyenne:
+                                                            <span class="badge badge-primary badge-pill"><?php echo $donnees['vitesse_moy'] ?> km/h</span>
+                                                        </li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <?php
+                        }
 
+                        $reponse->closeCursor(); // Termine le traitement de la requête
 
-                        </div>
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
+
+
 
         <div class="row">
             <div class="col-md-12">
@@ -323,6 +345,7 @@
     </div>
 
     </div>
+
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>

@@ -33,7 +33,7 @@
     }
     else
     {
-        echo $_SESSION['identifiant'];
+       include('home.php');
     }
     
    

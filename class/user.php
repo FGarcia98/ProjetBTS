@@ -5,8 +5,25 @@ class user
     //Propiétés
     private $_identifiant;
     private $_mdp;
+    private $_idUser;
+    private $_isadmin;
 
     //Methodes
+    public function getIdUser()
+    {
+        return $this->_idUser;
+    }
+    public function getIdentifiant()
+    {
+        return $this->_identifiant;
+    }
+    public function construct($id_user, $identifiant, $mdp, $isadmin)
+    {
+        $this->_idUser = $id_user;
+        $this->_identifiant = $identifiant;
+        $this->_mdp = $mdp;
+        $this->_isadmin = $isadmin;
+    }
     public function Connexionbdd() //Romain FLEMAL
     {
         try {
@@ -30,10 +47,10 @@ class user
 
                 echo "Vous étes connecter en tant que " . $userinfo['identifiant'] . " voulez vous " ?> <a href="home.php">acceder au site?</a>
 
-            <?php
+<?php
 
             }
-            
+
             if ($userinfo['isadmin'] == 1) // Proposition de mode admin si l'utilisateur en est un
             {
                 echo "<p>Voulez vous vous connecter en tant que </p>";
@@ -46,12 +63,33 @@ class user
     }
 
 
-    public function Modification_user($identifiant, $mdp, $bdd) // Florian Garcia
+    public function Modification_user($identifiant, $bdd, $newid, $newmdp) //copier coller
     {
+        try {
+            $requete = $bdd->query('SELECT identifiant,id_user FROM user WHERE "' . $identifiant . '"=`identifiant`');
+            $compte = $requete->rowCount();
+
+            if ($compte == 1) {
+                $tabinfo = $requete->fetch();
+                $id = $tabinfo['id_user'];
+                $requete2 = $bdd->query('UPDATE user SET identifiant= "' . $newid . '",mdp="' . $newmdp . '" WHERE id_user="' . $id . '"');
+            }
+        } catch (Exception $erreur) {
+            echo $erreur->getMessage() . " l'utilisateur n'existe pas";
+        }
     }
 
-    public function Suppression_user($identifiant, $mdp, $bdd) // Romain FLEMAL
+
+    public function deleteUser() // Florian Garcia
     {
+        try {
+            $bdd = new PDO('mysql:host=localhost; dbname=projetgps; charset=utf8', 'root', 'root');
+            echo "L'utilisateur " . $this->_identifiant . " | ID de l'utilisateur: " . $this->_idUser . "| Admin:" . $this->_isadmin;
+            $delet = $bdd->prepare("DELETE FROM `user` WHERE `id_user` = ? ");
+            $delet->execute(array($this->_idUser));
+        } catch (Exception $erreur) {
+            echo 'Erreur : ' . $erreur->getMessage();
+        }
     }
 }
 
