@@ -9,15 +9,15 @@ class user
     private $_isadmin;
 
     //Methodes
-    public function getIdUser()
+    public function getIdUser() // Florian Garcia
     {
         return $this->_idUser;
     }
-    public function getIdentifiant()
+    public function getIdentifiant() // Florian Garcia
     {
         return $this->_identifiant;
     }
-    public function construct($id_user, $identifiant, $mdp, $isadmin)
+    public function construct($id_user, $identifiant, $mdp, $isadmin) //Mathis Clermont
     {
         $this->_idUser = $id_user;
         $this->_identifiant = $identifiant;
@@ -47,7 +47,7 @@ class user
 
                 echo "Vous étes connecter en tant que " . $userinfo['identifiant'] . " voulez vous " ?> <a href="home.php">acceder au site?</a>
 
-<?php
+            <?php
 
             }
 
@@ -63,7 +63,7 @@ class user
     }
 
 
-    public function Modification_user($identifiant, $bdd, $newid, $newmdp) //copier coller
+    public function Modification_user($identifiant, $bdd, $newid, $newmdp) // Florian Garcia
     {
         try {
             $requete = $bdd->query('SELECT identifiant,id_user FROM user WHERE "' . $identifiant . '"=`identifiant`');

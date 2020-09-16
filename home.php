@@ -79,7 +79,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="images/icon/logo.png"/>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -88,7 +88,9 @@
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-user"></i>Utilisateur</a>
-                        </li>
+                        
+                        
+                            </li>
 
                         <li>
                             <a href="map.html">
@@ -207,14 +209,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-
-                                        <div class="content">
-                                        <div class="api_heure h4" id="zone_api" onload="affiche_heure()"></div>
+                                    <div class="account-wrap">
+                                        <div class="account-item clearfix js-item-menu">
+                                            <div class="content">
+                                                <div class="h4" id="zone_api" onload="affiche_heure()"></div>
+                                            </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -232,13 +232,10 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">
+                                    <h2 class="h2">
                                         <?php
 
                                         echo "Vous êtes connecté en tant que : " . $_SESSION['identifiant'] . " !";
-
-
-
 
                                         ?>
                                     </h2>
@@ -254,21 +251,18 @@
                                         <div class="overview-box clearfix">
                                             <div class="icon">
                                                 <i class="zmdi zmdi-account-o"></i>
-                                            </div>
-                                            <div class="text">
-                                                <?php
-                                                echo "<h2>" . $_SESSION['identifiant'] . "</h2>";
-                                                ?>
 
+                                                <div class="text">
+                                                    <?php
+                                                    echo "<h2>" . $_SESSION['identifiant'] . "</h2>";
+                                                    ?>
+
+                                                </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                         <?php
                         try {
@@ -290,7 +284,7 @@
                                 <div class="col-lg-10">
                                     <div class="au-card recent-report">
                                         <div class="au-card-inner">
-                                            <h3 class="title-2">Données GPS du bateau :</h3>
+                                            <h3 class="h3">Données GPS du bateau :</h3>
                                             <div class="info_GPS">
                                                 <div class="col-lg-5">
                                                     <ul class="list-group">
@@ -327,8 +321,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="row">
             <div class="col-md-12">

@@ -29,7 +29,7 @@ try {
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Accueil</title>
+    <title>Admin</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -97,21 +97,26 @@ try {
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="images/icon/logo.png" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
-                    <ul class="nav nav-pills">
-
-                        <li type="button" class="btn btn-outline-primary" role="presentation"><a href="#2" data-toggle="tab">Modifier User</a></li>
-                        <li type="button" class="btn btn-outline-primary " class="active" role="presentation"><a href="#1" data-toggle="tab">Supprimer l'utilisateur</a></li>
-
-
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-user"></i>Utilisateur</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list nav nav-pills">
+                                <li>
+                                    <a href="#2" data-toggle="tab">Modifier un utilisateur</a>
+                                </li>
+                                <li>
+                                    <a class="active" href="#1" data-toggle="tab">Supprimer un utilisateur</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-
                 </nav>
-
             </div>
         </aside>
         <!-- END MENU SIDEBAR-->
@@ -222,14 +227,14 @@ try {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
+                                    <div class="account-wrap">
+                                        <div class="account-item clearfix js-item-menu">
 
-                                        <div class="content">
-                                            <div class="api_heure h4" id="zone_api" onload="affiche_heure()"></div>
+                                            <div class="content">
+                                                <div class="api_heure h4" id="zone_api" onload="affiche_heure()"></div>
+                                            </div>
+
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -247,10 +252,10 @@ try {
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">
+                                    <h2 class="h2">
                                         <?php
 
-                                        echo "Vous êtes connecté en tant que | " . $_SESSION['identifiant'] . " |";
+                                        echo "Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !";
 
 
 
@@ -288,23 +293,24 @@ try {
                                     <div class="col-lg-10">
                                         <div class="au-card recent-report">
                                             <div class="au-card-inner">
-                                                <h1 class="panel-title">Gestion User:</h1>
+                                                <h1 class="panel-title">Gestion des utilisateurs :</h1>
                                                 <div class="info_GPS">
 
                                                     <div class="col-lg-5">
                                                         <div class="panel-heading">
-                                                            <h3 class="title-2">Supprimer l'utilisateur :</h3>
+                                                            <h3 class="title-2">Supprimer l'utilisateur :</h3> <br>
                                                         </div>
                                                         <div class="panel-body">
                                                             <FORM action="" method="POST">
                                                                 <?php
                                                                 //parcours du tableau User pour delete a partir d'une checkbox
                                                                 foreach ($TabUser as $objetUser) {
-                                                                    echo '<p><input type="checkbox" value="' . $objetUser->getIdUser() . '" name="user[]" />';
-                                                                    echo '<label for="coding">  ' .  $objetUser->getIdentifiant() . ' </label></p>';
+                                                                    
+                                                                    echo '<p><input type="checkbox" value=" ' . $objetUser->getIdUser() . '" name="user[]" />';
+                                                                    echo '<label for="coding" >    ' .  $objetUser->getIdentifiant() . ' </label></p>';
                                                                 }
                                                                 ?>
-                                                                <input type="submit" value="Supprimer"></input>
+                                                                <input class="btn btn-danger" type="submit" value="Supprimer"></input>
                                                             </FORM>
                                                             <?php
                                                             //Traitement checkbox pour delete user sélectionner
@@ -341,7 +347,7 @@ try {
                                     <div class="col-lg-10">
                                         <div class="au-card recent-report">
                                             <div class="au-card-inner">
-                                                <h1 class="panel-title">Gestion User:</h1>
+                                                <h1 class="panel-title">Gestion des utilisateurs :</h1>
                                                 <div class="info_GPS">
 
                                                     <div class="col-lg-5">
@@ -412,7 +418,7 @@ try {
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFloGANG</p>
+                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo</p>
                 </div>
             </div>
         </div>
