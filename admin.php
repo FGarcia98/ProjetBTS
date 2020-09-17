@@ -305,11 +305,12 @@ try {
                                                                 <?php
                                                                 //parcours du tableau User pour delete a partir d'une checkbox
                                                                 foreach ($TabUser as $objetUser) {
-                                                                    
+
                                                                     echo '<p><input type="checkbox" value=" ' . $objetUser->getIdUser() . '" name="user[]" />';
-                                                                    echo '<label for="coding" >    ' .  $objetUser->getIdentifiant() . ' </label></p>';
+                                                                    echo '<label for="coding" >    ' .  $objetUser->getIdentifiant() . '</label></p>';
                                                                 }
                                                                 ?>
+                                                                <br>
                                                                 <input class="btn btn-danger" type="submit" value="Supprimer"></input>
                                                             </FORM>
                                                             <?php
@@ -352,21 +353,28 @@ try {
 
                                                     <div class="col-lg-5">
                                                         <div class="panel-heading">
-                                                            <h3 class="title-2">Modifier l'utilisateur:</h3>
+                                                            <h3 class="title-2">Modifier l'utilisateur :</h3> <br>
+
                                                         </div>
                                                         <div class="panel-body">
                                                             <form action="" method="POST" class="login100-form validate-form">
 
                                                                 <!-- Champ de saisie pour le Identifiant  -->
                                                                 <div class="wrap-input100 validate-input">
+                                                                    <p></p>
                                                                     <input class="input100" type="text" name="identifiant" placeholder="Identifiant actuel">
+
                                                                     <span class="focus-input100"></span>
                                                                     <span class="symbol-input100">
-                                                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                                                        <i class="fas fa-user-circle" aria-hidden="true"></i>
+
                                                                     </span>
+
                                                                 </div>
+
                                                                 <!-- Champ de saisie pour le Password -->
                                                                 <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                                                    <br>
                                                                     <input class="input100" type="text" name="newid" placeholder="Nouvel Identifian">
                                                                     <span class="focus-input100"></span>
                                                                     <span class="symbol-input100">
@@ -374,11 +382,16 @@ try {
                                                                     </span>
                                                                 </div>
                                                                 <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                                                    <br>
                                                                     <input class="input100" type="password" name="newmdp" placeholder="Nouveau mot de passe">
+                                                                    <span class="symbol-input100">
+                                                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                                                    </span>
 
                                                                 </div>
                                                                 <div class="container-login100-form-btn">
-                                                                    <input type="submit" value="Modifier l'utilisateur" class="login100-form-btn">
+                                                                    <br>
+                                                                    <input type="submit" value="Modifier l'utilisateur" class="btn btn-danger">
                                                                     </input>
                                                                 </div>
                                                             </form>
