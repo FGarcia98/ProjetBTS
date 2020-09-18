@@ -57,6 +57,8 @@ try {
 </head>
 
 
+<?php if(isset($_SESSION['identifiant']) == true){ ?>
+
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -254,12 +256,7 @@ try {
                                 <div class="overview-wrap">
                                     <h2 class="h2">
                                         <?php
-
                                         echo "Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !";
-
-
-
-
                                         ?>
                                     </h2>
                                 </div>
@@ -438,12 +435,17 @@ try {
     </div>
     </div>
     </div>
+    
     <!-- END MAIN CONTENT-->
     <!-- END PAGE CONTAINER-->
     </div>
 
     </div>
-
+    <?php
+    }else{
+        include("404.php");
+    }
+    ?>                                                       
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
