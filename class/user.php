@@ -43,7 +43,11 @@ class user
             $userinfo = $requser->fetch();
             $_SESSION['identifiant'] = $userinfo['identifiant'];
 
-           
+            if ($userinfo['isadmin'] == 0) 
+            {
+                
+            }
+            
 
             if ($userinfo['isadmin'] == 1) // Proposition de mode admin si l'utilisateur en est un
             {
