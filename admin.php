@@ -252,16 +252,16 @@ try {
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="h2">
-                                        <?php
 
-                                        echo "Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !";
+                                    <?php
 
-
+                                    echo "<h2>Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !</h2>";
 
 
-                                        ?>
-                                    </h2>
+
+
+                                    ?>
+
                                 </div>
                             </div>
                         </div>
@@ -305,7 +305,7 @@ try {
                                                                 <?php
                                                                 //parcours du tableau User pour delete a partir d'une checkbox
                                                                 foreach ($TabUser as $objetUser) {
-                                                                    
+
                                                                     echo '<p><input type="checkbox" value=" ' . $objetUser->getIdUser() . '" name="user[]" />';
                                                                     echo '<label for="coding" >    ' .  $objetUser->getIdentifiant() . ' </label></p>';
                                                                 }
@@ -352,8 +352,10 @@ try {
 
                                                     <div class="col-lg-5">
                                                         <div class="panel-heading">
-                                                            <h3 class="title-2">Modifier l'utilisateur:</h3>
+                                                            <h3 class="title-2">Modifier l'utilisateur:</h3><br>
+
                                                         </div>
+
                                                         <div class="panel-body">
                                                             <form action="" method="POST" class="login100-form validate-form">
 
@@ -362,21 +364,24 @@ try {
                                                                     <input class="input100" type="text" name="identifiant" placeholder="Identifiant actuel">
                                                                     <span class="focus-input100"></span>
                                                                     <span class="symbol-input100">
-                                                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+
                                                                     </span>
                                                                 </div>
+                                                                <br>
                                                                 <!-- Champ de saisie pour le Password -->
                                                                 <div class="wrap-input100 validate-input" data-validate="Password is required">
                                                                     <input class="input100" type="text" name="newid" placeholder="Nouvel Identifian">
                                                                     <span class="focus-input100"></span>
                                                                     <span class="symbol-input100">
-                                                                        <i class="fa fa-lock" aria-hidden="true"></i>
+
                                                                     </span>
                                                                 </div>
+                                                                <br>
                                                                 <div class="wrap-input100 validate-input" data-validate="Password is required">
                                                                     <input class="input100" type="password" name="newmdp" placeholder="Nouveau mot de passe">
 
                                                                 </div>
+                                                                <br>
                                                                 <div class="container-login100-form-btn">
                                                                     <input type="submit" value="Modifier l'utilisateur" class="login100-form-btn">
                                                                     </input>
@@ -418,7 +423,7 @@ try {
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo</p>
+                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFloGang</p>
                 </div>
             </div>
         </div>

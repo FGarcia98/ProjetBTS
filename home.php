@@ -79,7 +79,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png"/>
+                    <img src="images/icon/logo.png" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -88,9 +88,9 @@
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-user"></i>Utilisateur</a>
-                        
-                        
-                            </li>
+
+
+                        </li>
 
                         <li>
                             <a href="map.html">
@@ -232,13 +232,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="h2">
-                                        <?php
 
-                                        echo "Vous êtes connecté en tant que : " . $_SESSION['identifiant'] . " !";
+                                    <?php
 
-                                        ?>
-                                    </h2>
+                                    echo "<h2>Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !</h2>";
+
+                                    ?>
+
                                     <button class="au-btn au-btn-icon au-btn--blue">
                                         <i class="zmdi zmdi-plus"></i>Ajouter coordonnées</button>
                                 </div>
@@ -250,14 +250,17 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
+                                            
                                                 <i class="zmdi zmdi-account-o"></i>
-
+                                                
                                                 <div class="text">
+                                                
                                                     <?php
                                                     echo "<h2>" . $_SESSION['identifiant'] . "</h2>";
                                                     ?>
-
+                                                    <br>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -275,10 +278,10 @@
 
                         // Si tout va bien, on peut continuer
 
-                        // On récupère tout le contenu de la table jeux_video
+                        // On récupère tout le contenu de la table bateau
                         $reponse = $bdd->query('SELECT * FROM `bateau`');
 
-                        // On affiche chaque entrée une à une
+                        // On affiche chaque entrée 
                         while ($donnees = $reponse->fetch()) {
                         ?> <div class="row">
                                 <div class="col-lg-10">
@@ -325,7 +328,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo</p>
+                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFloGang</p>
                 </div>
             </div>
         </div>
