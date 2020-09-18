@@ -79,7 +79,11 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
+<<<<<<< HEAD
                     <img src="images/icon/logo.png" />
+=======
+                    <img src="images/icon/logo-user.png"/>
+>>>>>>> 6fb41c681fcf5f24113e94f9f92e2fa04777c938
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -240,7 +244,7 @@
                                     ?>
 
                                     <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>Ajouter coordonnées</button>
+                                        <i class="zmdi zmdi-plus"></i>Ajouter coordonnées GPS</button>
                                 </div>
                             </div>
                         </div>
