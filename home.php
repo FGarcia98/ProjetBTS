@@ -285,9 +285,15 @@
                         while ($donnees = $reponse->fetch()) {
                         ?> <div class="row">
                                 <div class="col-lg-10">
+                                    
                                     <div class="au-card recent-report">
+                                    
                                         <div class="au-card-inner">
+                            
                                             <h3 class="h3">Données GPS du bateau :</h3>
+                                            
+                                            <?php include("carte.php") ?>
+                                            
                                             <div class="info_GPS">
                                                 <div class="col-lg-5">
                                                     <ul class="list-group">
