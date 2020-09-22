@@ -27,7 +27,7 @@
 <body>
 <?php 
      if(!isset($_SESSION['identifiant'])){
-        include("login.html");
+        include("login.php");
     }
     else
     {

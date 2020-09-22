@@ -49,7 +49,7 @@ require("class/user.php");
     <link href="css/theme.css" rel="stylesheet" media="all">
 
 </head>
-<?php if(isset($_SESSION['identifiant']) == true){ ?>
+<?php if(isset($_SESSION['identifiant']) == true){ ?> <!-- Si user existe alors la page s'affiche sinon error 404-->
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -90,7 +90,7 @@ require("class/user.php");
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo-user.png"/>
+                    <img src="images/icon/logo.png" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -99,9 +99,9 @@ require("class/user.php");
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-user"></i>Utilisateur</a>
-                        
-                        
-                            </li>
+
+
+                        </li>
 
                         <li>
                             <a href="map.html">
@@ -207,23 +207,23 @@ require("class/user.php");
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                        <i class="zmdi zmdi-account"></i>Compte</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                        <i class="zmdi zmdi-settings"></i>Paramètre</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="deconnexion.php">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    <i class="zmdi zmdi-power"></i>Deconnexion</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="account-wrap">
                                         <div class="account-item clearfix js-item-menu">
                                             <div class="content">
-                                                <div class="h4" id="zone_api" onload="affiche_heure()"></div>
+                                                <div class="h4" id="zone_api" onload="affiche_heure()"></div> <!-- api heure-->
                                             </div>
                                         </div>
                                     </div>
@@ -243,15 +243,15 @@ require("class/user.php");
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="h2">
-                                        <?php
 
-                                        echo "Vous êtes connecté en tant que : " . $_SESSION['identifiant'] . " !";
+                                    <?php
 
-                                        ?>
-                                    </h2>
+                                    echo "<h2>Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !</h2>"; // Affiche le user connecter
+
+                                    ?>
+
                                     <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>Ajouter coordonnées GPS</button>
+                                        <i class="zmdi zmdi-plus"></i>Ajouter coordonnées GPS</button>  <!-- futur utilité-->
                                 </div>
                             </div>
                         </div>
@@ -261,14 +261,17 @@ require("class/user.php");
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
+                                            
                                                 <i class="zmdi zmdi-account-o"></i>
-
+                                                
                                                 <div class="text">
+                                                
                                                     <?php
-                                                    echo "<h2>" . $_SESSION['identifiant'] . "</h2>";
+                                                    echo "<h2>" . $_SESSION['identifiant'] . "</h2>"; // Affiche le user connecter
                                                     ?>
-
+                                                    <p class="para"></p>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -286,16 +289,22 @@ require("class/user.php");
 
                         // Si tout va bien, on peut continuer
 
-                        // On récupère tout le contenu de la table jeux_video
+                        // On récupère tout le contenu de la table bateau
                         $reponse = $bdd->query('SELECT * FROM `bateau`');
 
-                        // On affiche chaque entrée une à une
+                        // On affiche chaque entrée 
                         while ($donnees = $reponse->fetch()) {
                         ?> <div class="row">
                                 <div class="col-lg-10">
+                                    
                                     <div class="au-card recent-report">
+                                    
                                         <div class="au-card-inner">
+                            
                                             <h3 class="h3">Données GPS du bateau :</h3>
+                                            
+                                            <?php include("carte.php") ?>
+                                            
                                             <div class="info_GPS">
                                                 <div class="col-lg-5">
                                                     <ul class="list-group">
@@ -336,7 +345,7 @@ require("class/user.php");
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo</p>
+                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo/p>
                 </div>
             </div>
         </div>
