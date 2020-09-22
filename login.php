@@ -60,19 +60,17 @@
                         </input>
                     </div>
                     <?php
-                    if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
-                        $coUser = new user(); //le mot de passe est correct, on crée l'objet user
-                        $base = $coUser->Connexionbdd();
-                        $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);
-                    } //fin du PHP pour la connection
+                    if (isset($_POST['identifiant']) && isset($_POST['mdp'])) { // Tout les champs du formulaire
+                        $coUser = new user(); //Le mot de passe est correct, on crée l'objet user
+                        $base = $coUser->Connexionbdd(); // Méthode de connexion dans class user
+                        $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);//  Méthode de autorisation dans class user
+                    } //Fin du PHP pour la connection
                     ?>
                     <!-- Lien vers la connexion du mode admin -->
                     <div class="text-center p-t-136">
-                        <a class="txt2" href="#">
-                            Administration
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                        </a>
+                       
                     </div>
+                
                 </form>
             </div>
         </div>

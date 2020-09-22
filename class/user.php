@@ -13,7 +13,7 @@ class user
     {
         return $this->_idUser;
     }
-    public function getIdentifiant() // Florian Garcia
+    public function getIdentifiant() // Florian Garcia 
     {
         return $this->_identifiant;
     }
@@ -36,9 +36,9 @@ class user
 
     public function Autorisation($identifiant, $mdp, $bdd) // Romain FLEMAL
     {
-        $requser = $bdd->prepare('SELECT * FROM user WHERE "' . $identifiant . '"=`identifiant` && "' . $mdp . '"=`mdp');
-        $requser->execute(array($identifiant, $mdp));
-        $userexist = $requser->rowCount();
+        $requser = $bdd->prepare('SELECT * FROM user WHERE "' . $identifiant . '"=`identifiant` && "' . $mdp . '"=`mdp'); // Vérifie si l'identifiant et le mdp sont les meme quand base
+        $requser->execute(array($identifiant, $mdp));// mise en tableau
+        $userexist = $requser->rowCount(); 
         if ($userexist == 1) {
             $userinfo = $requser->fetch();
             $_SESSION['identifiant'] = $userinfo['identifiant'];
@@ -63,7 +63,7 @@ class user
     }
 
 
-    public function Modification_user($identifiant, $bdd, $newid, $newmdp) // Florian Garcia
+    public function Modification_user($identifiant, $bdd, $newid, $newmdp) // Florian Garcia 
     {
         try {
             $requete = $bdd->query('SELECT identifiant,id_user FROM user WHERE "' . $identifiant . '"=`identifiant`');

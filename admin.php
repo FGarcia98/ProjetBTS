@@ -105,7 +105,7 @@ try {
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-user"></i>Utilisateur</a>
+                                <i class="fas fa-user"></i>Utilisateur</a>  <!-- Onglet qui gere les modif et supp des users-->
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list nav nav-pills">
                                 <li>
                                     <a href="#2" data-toggle="tab">Modifier un utilisateur</a>
@@ -231,7 +231,7 @@ try {
                                         <div class="account-item clearfix js-item-menu">
 
                                             <div class="content">
-                                                <div class="api_heure h4" id="zone_api" onload="affiche_heure()"></div>
+                                                <div class="api_heure h4" id="zone_api" onload="affiche_heure()"></div> <!-- API HEURE-->
                                             </div>
 
                                         </div>
@@ -255,7 +255,7 @@ try {
 
                                     <?php
 
-                                    echo "<h2>Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !</h2>";
+                                    echo "<h2>Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !</h2>"; //Affiche le user connecter
 
 
 
@@ -275,7 +275,7 @@ try {
                                             </div>
                                             <div class="text">
                                                 <?php
-                                                echo "<h2>" . $_SESSION['identifiant'] . "</h2>";
+                                                echo "<h2>" . $_SESSION['identifiant'] . "</h2>";//affiche le user connecter
                                                 ?>
 
                                             </div>
@@ -320,14 +320,14 @@ try {
 
                                                                     $j = 0;
                                                                     foreach ($TabUser as $objetUser) {
-                                                                        if ($objetUser->getIdUser() == $id_user) {
+                                                                        if ($objetUser->getIdUser() == $id_user) { //Appel du constructeur de l'id
                                                                             $objetUser->deleteUser(); //Appel de la méthode pour delete 
 
                                                                             //j'en profite pour le retirer de mon tableau. car il sera supprimé à l'affichage
                                                                             unset($TabUser[$j]);
                                                                         }
                                                                         $j++;
-                                                                    }
+                                                                    } 
                                                                 }
                                                             }
 
@@ -353,11 +353,7 @@ try {
 
                                                     <div class="col-lg-5">
                                                         <div class="panel-heading">
-<<<<<<< HEAD
                                                             <h3 class="title-2">Modifier l'utilisateur:</h3><br>
-=======
-                                                            <h3 class="title-2">Modifier l'utilisateur :</h3> <br>
->>>>>>> 6fb41c681fcf5f24113e94f9f92e2fa04777c938
 
                                                         </div>
 
@@ -371,26 +367,19 @@ try {
 
                                                                     <span class="focus-input100"></span>
                                                                     <span class="symbol-input100">
-<<<<<<< HEAD
-=======
-                                                                        <i class="fas fa-user-circle" aria-hidden="true"></i>
->>>>>>> 6fb41c681fcf5f24113e94f9f92e2fa04777c938
-
+                                                                    <i class="fas fa-user-circle"></i>
+                                                                        <i></i>
                                                                     </span>
 
                                                                 </div>
-<<<<<<< HEAD
                                                                 <br>
-=======
-
->>>>>>> 6fb41c681fcf5f24113e94f9f92e2fa04777c938
                                                                 <!-- Champ de saisie pour le Password -->
                                                                 <div class="wrap-input100 validate-input" data-validate="Password is required">
                                                                     <br>
                                                                     <input class="input100" type="text" name="newid" placeholder="Nouvel Identifian">
                                                                     <span class="focus-input100"></span>
                                                                     <span class="symbol-input100">
-
+                                                                    <i class="fa fa-lock" aria-hidden="true"></i>
                                                                     </span>
                                                                 </div>
                                                                 <br>
@@ -411,7 +400,7 @@ try {
                                                             </form>
 
                                                             <?php
-                                                            if (isset($_POST['identifiant']) && isset($_POST['newid']) && isset($_POST['newmdp'])) //copier coller
+                                                            if (isset($_POST['identifiant']) && isset($_POST['newid']) && isset($_POST['newmdp'])) //Tout les champs du formulaire
                                                             {
                                                                 $identifiant = $_POST['identifiant'];
                                                                 $newid = $_POST['newid'];
@@ -421,8 +410,8 @@ try {
                                                                 $mdpadmin = "admin";
 
                                                                 $userrequete = new user($idadmin, $mdpadmin);
-                                                                $base = $userrequete->Connexionbdd();
-                                                                $userrequete->Modification_user($identifiant, $base, $newid, $newmdp);
+                                                                $base = $userrequete->Connexionbdd();// connexion BDD
+                                                                $userrequete->Modification_user($identifiant, $base, $newid, $newmdp); // Modification user
                                                             }
                                                             ?>
 

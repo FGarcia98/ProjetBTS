@@ -79,11 +79,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-<<<<<<< HEAD
                     <img src="images/icon/logo.png" />
-=======
-                    <img src="images/icon/logo-user.png"/>
->>>>>>> 6fb41c681fcf5f24113e94f9f92e2fa04777c938
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -216,7 +212,7 @@
                                     <div class="account-wrap">
                                         <div class="account-item clearfix js-item-menu">
                                             <div class="content">
-                                                <div class="h4" id="zone_api" onload="affiche_heure()"></div>
+                                                <div class="h4" id="zone_api" onload="affiche_heure()"></div> <!-- api heure-->
                                             </div>
                                         </div>
                                     </div>
@@ -239,12 +235,12 @@
 
                                     <?php
 
-                                    echo "<h2>Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !</h2>";
+                                    echo "<h2>Vous êtes connecté en tant que " . $_SESSION['identifiant'] . " !</h2>"; // Affiche le user connecter
 
                                     ?>
 
                                     <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>Ajouter coordonnées GPS</button>
+                                        <i class="zmdi zmdi-plus"></i>Ajouter coordonnées GPS</button>  <!-- futur utilité-->
                                 </div>
                             </div>
                         </div>
@@ -260,7 +256,7 @@
                                                 <div class="text">
                                                 
                                                     <?php
-                                                    echo "<h2>" . $_SESSION['identifiant'] . "</h2>";
+                                                    echo "<h2>" . $_SESSION['identifiant'] . "</h2>"; // Affiche le user connecter
                                                     ?>
                                                     <br>
                                                 </div>
@@ -332,7 +328,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFloGang</p>
+                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo/p>
                 </div>
             </div>
         </div>
