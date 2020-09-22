@@ -1,14 +1,5 @@
 <?php session_start(); 
 require("class/user.php"); 
-
- if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
-     $coUser = new user(); //le mot de passe est correct, on crée l'objet user
-     $base = $coUser->Connexionbdd();
-     $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);
-     
- } //fin du PHP pour la connection
-
-
 ?>
 <!DOCTYPE html>
 
@@ -58,7 +49,7 @@ require("class/user.php");
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/img-01.png" alt="CoolAdmin" />
+                            <img src="images/icon/logo-user.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -77,7 +68,7 @@ require("class/user.php");
                         </li>
 
                         <li>
-                            <a href="map.html">
+                            <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
                     </ul>
@@ -90,7 +81,7 @@ require("class/user.php");
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" />
+                    <img src="images/icon/logo-user.png" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -104,7 +95,7 @@ require("class/user.php");
                         </li>
 
                         <li>
-                            <a href="map.html">
+                            <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
 
@@ -207,16 +198,19 @@ require("class/user.php");
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Compte</a>
+                                                        <i class="zmdi zmdi-account"></i>Compte
+                                                    </a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Paramètre</a>
+                                                        <i class="zmdi zmdi-settings"></i>Paramètre
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="deconnexion.php">
-                                                    <i class="zmdi zmdi-power"></i>Deconnexion</a>
+                                                    <i class="zmdi zmdi-power"></i>Deconnexion
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -300,7 +294,7 @@ require("class/user.php");
                                     <div class="au-card recent-report">
                                     
                                         <div class="au-card-inner">
-                            
+                                    
                                             <h3 class="h3">Données GPS du bateau :</h3>
                                             
                                             <?php include("carte.php") ?>
@@ -345,7 +339,7 @@ require("class/user.php");
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo/p>
+                    <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo</p>
                 </div>
             </div>
         </div>

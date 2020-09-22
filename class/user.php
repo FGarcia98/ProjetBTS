@@ -77,7 +77,7 @@ class user
     {
         try {
             $bdd = new PDO('mysql:host=localhost; dbname=projetgps; charset=utf8', 'root', 'root');
-            echo "L'utilisateur " . $this->_identifiant . " | ID de l'utilisateur: " . $this->_idUser . "| Admin:" . $this->_isadmin;
+            echo "L'utilisateur " . $this->_identifiant . " à bien été suprimer !";
             $delet = $bdd->prepare("DELETE FROM `user` WHERE `id_user` = ? ");
             $delet->execute(array($this->_idUser));
         } catch (Exception $erreur) {

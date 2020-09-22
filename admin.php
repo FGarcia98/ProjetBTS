@@ -326,7 +326,7 @@ try {
                                                                     $j = 0;
                                                                     foreach ($TabUser as $objetUser) {
                                                                         if ($objetUser->getIdUser() == $id_user) { //Appel du constructeur de l'id
-                                                                            $objetUser->deleteUser(); //Appel de la méthode pour delete 
+                                                                            $objetUser->deleteUser($bdd); //Appel de la méthode pour delete 
 
                                                                             //j'en profite pour le retirer de mon tableau. car il sera supprimé à l'affichage
                                                                             unset($TabUser[$j]);
