@@ -1,3 +1,5 @@
+<?php session_start(); 
+require("class/user.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
