@@ -1,5 +1,6 @@
 <?php session_start(); 
-require("class/user.php"); 
+require("class/user.php");
+require("class/map.php"); 
 ?>
 <!DOCTYPE html>
 
@@ -340,6 +341,7 @@ require("class/user.php");
             <div class="col-md-12">
                 <div class="copyright">
                     <p>Copyright © 2020 La Providence. Tous droits reservés. Developper par RoroMatFlo</p>
+                    
                 </div>
             </div>
         </div>
