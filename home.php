@@ -38,7 +38,7 @@
     <link href="css/theme.css" rel="stylesheet" media="all">
 
 </head>
-
+<?php if(isset($_SESSION['identifiant']) == true){ ?>
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -340,7 +340,11 @@
     </div>
 
     </div>
-
+    <?php
+    }else{
+        include("404.html");
+    }
+    ?>                    
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>

@@ -57,6 +57,8 @@ try {
 </head>
 
 
+<?php if(isset($_SESSION['identifiant']) == true){ ?>
+
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -441,12 +443,17 @@ try {
     </div>
     </div>
     </div>
+    
     <!-- END MAIN CONTENT-->
     <!-- END PAGE CONTAINER-->
     </div>
 
     </div>
-
+    <?php
+    }else{
+        include("404.html");
+    }
+    ?>                                                       
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
