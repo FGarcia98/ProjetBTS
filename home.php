@@ -1,4 +1,15 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require("class/user.php"); 
+
+ if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
+     $coUser = new user(); //le mot de passe est correct, on crée l'objet user
+     $base = $coUser->Connexionbdd();
+     $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);
+     
+ } //fin du PHP pour la connection
+
+
+?>
 <!DOCTYPE html>
 
 <html lang="en">

@@ -34,7 +34,7 @@
                 </div>
                 <!-- Titre -->
 
-                <form action="index.php" method="POST" class="login100-form validate-form">
+                <form action="home.php" method="POST" class="login100-form validate-form">
                     <span class="login100-form-title">
                         Connexion
                     </span>
@@ -59,13 +59,7 @@
                         <input type="submit" value="Se connecter" class="login100-form-btn">
                         </input>
                     </div>
-                    <?php
-                    if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
-                        $coUser = new user(); //le mot de passe est correct, on crée l'objet user
-                        $base = $coUser->Connexionbdd();
-                        $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);
-                    } //fin du PHP pour la connection
-                    ?>
+                   
                     <!-- Lien vers la connexion du mode admin -->
                     <div class="text-center p-t-136">
                         

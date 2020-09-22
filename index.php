@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-<?php require("class/user.php"); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,16 +27,13 @@
 <body>
 <?php 
      if(!isset($_SESSION['identifiant'])){
-        include("login.php");
-        
+        include("login.html");
     }
     else
     {
        include('home.php');
     }
-    
-   
-?>
+?>    
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
