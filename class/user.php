@@ -43,12 +43,7 @@ class user
             $userinfo = $requser->fetch();
             $_SESSION['identifiant'] = $userinfo['identifiant'];
 
-            if ($userinfo['isadmin'] == 0) 
-            {
-                
-            }
-            
-
+            echo $userinfo['identifiant'];
             if ($userinfo['isadmin'] == 1) // Proposition de mode admin si l'utilisateur en est un
             {
                 echo "<p>Voulez vous vous connecter en tant que </p>";
@@ -56,8 +51,8 @@ class user
                 include("modal.html");
             }
         } else {
-            
-            echo "Identifiant ou mot de passe incorrect !";
+
+            echo "Identifiant ou mot de passe incorrect !";    
         }
     }
 

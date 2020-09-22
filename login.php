@@ -33,7 +33,6 @@
                     <img src="images/img-01.png" alt="IMG">
                 </div>
                 <!-- Titre -->
-
                 <form action="index.php" method="POST" class="login100-form validate-form">
                     <span class="login100-form-title">
                         Connexion
@@ -59,18 +58,17 @@
                         <input type="submit" value="Se connecter" class="login100-form-btn">
                         </input>
                     </div>
+                    <!-- Lien vers la connexion du mode admin -->
                     <?php
                     if (isset($_POST['identifiant']) && isset($_POST['mdp'])) { // Tout les champs du formulaire
                         $coUser = new user(); //Le mot de passe est correct, on crée l'objet user
                         $base = $coUser->Connexionbdd(); // Méthode de connexion dans class user
-                        $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base);//  Méthode de autorisation dans class user
-                    } //Fin du PHP pour la connection
+                        $coUser->Autorisation($_POST['identifiant'], $_POST['mdp'], $base); //  Méthode de autorisation dans class user  
+                    }
                     ?>
-                    <!-- Lien vers la connexion du mode admin -->
                     <div class="text-center p-t-136">
-                       
                     </div>
-                
+
                 </form>
             </div>
         </div>

@@ -38,7 +38,7 @@
     <link href="css/theme.css" rel="stylesheet" media="all">
 
 </head>
-<?php if(isset($_SESSION['identifiant']) == true){ ?>
+<?php if(isset($_SESSION['identifiant']) == true){ ?> <!-- Si user existe alors la page s'affiche sinon error 404-->
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -196,16 +196,16 @@
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                        <i class="zmdi zmdi-account"></i>Compte</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                        <i class="zmdi zmdi-settings"></i>Paramètre</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="deconnexion.php">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    <i class="zmdi zmdi-power"></i>Deconnexion</a>
                                             </div>
                                         </div>
                                     </div>
@@ -258,7 +258,7 @@
                                                     <?php
                                                     echo "<h2>" . $_SESSION['identifiant'] . "</h2>"; // Affiche le user connecter
                                                     ?>
-                                                    <br>
+                                                    <p class="para"></p>
                                                 </div>
 
                                             </div>

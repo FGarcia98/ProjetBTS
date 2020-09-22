@@ -216,16 +216,16 @@ try {
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                        <i class="zmdi zmdi-account"></i>Compte</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                        <i class="zmdi zmdi-settings"></i>Paramètre</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="deconnexion.php">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    <i class="zmdi zmdi-power"></i>Deconnexion</a>
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +278,9 @@ try {
                                             <div class="text">
                                                 <?php
                                                 echo "<h2>" . $_SESSION['identifiant'] . "</h2>";//affiche le user connecter
+                                               
                                                 ?>
+                                                 <p class="para"></p>
 
                                             </div>
                                         </div>
@@ -300,7 +302,8 @@ try {
 
                                                     <div class="col-lg-5">
                                                         <div class="panel-heading">
-                                                            <h3 class="title-2">Supprimer l'utilisateur :</h3> <br>
+                                                            <h3 class="title-2">Supprimer l'utilisateur :</h3> 
+                                                            <p class="para"></p>
                                                         </div>
                                                         <div class="panel-body">
                                                             <FORM action="" method="POST">
@@ -312,7 +315,7 @@ try {
                                                                     echo '<label for="coding" >    ' .  $objetUser->getIdentifiant() . '</label></p>';
                                                                 }
                                                                 ?>
-                                                                <br>
+                                                                <p class="para"></p>
                                                                 <input class="btn btn-danger" type="submit" value="Supprimer"></input>
                                                             </FORM>
                                                             <?php
@@ -355,7 +358,8 @@ try {
 
                                                     <div class="col-lg-5">
                                                         <div class="panel-heading">
-                                                            <h3 class="title-2">Modifier l'utilisateur:</h3><br>
+                                                            <h3 class="title-2">Modifier l'utilisateur:</h3>
+                                                            <p class="para"></p>
 
                                                         </div>
 
@@ -374,28 +378,28 @@ try {
                                                                     </span>
 
                                                                 </div>
-                                                                <br>
+                                                                <p class="para"></p>
                                                                 <!-- Champ de saisie pour le Password -->
                                                                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                                                                    <br>
+                                                                    <p class="para"></p>
                                                                     <input class="input100" type="text" name="newid" placeholder="Nouvel Identifian">
                                                                     <span class="focus-input100"></span>
                                                                     <span class="symbol-input100">
                                                                     <i class="fa fa-lock" aria-hidden="true"></i>
                                                                     </span>
                                                                 </div>
-                                                                <br>
+                                                                <p class="para"></p>
                                                                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                                                                    <br>
+                                                                    <p class="para"></p>
                                                                     <input class="input100" type="password" name="newmdp" placeholder="Nouveau mot de passe">
                                                                     <span class="symbol-input100">
                                                                         <i class="fa fa-lock" aria-hidden="true"></i>
                                                                     </span>
 
                                                                 </div>
-                                                                <br>
+                                                                <p class="para"></p>
                                                                 <div class="container-login100-form-btn">
-                                                                    <br>
+                                                                    <p class="para"></p>
                                                                     <input type="submit" value="Modifier l'utilisateur" class="btn btn-danger">
                                                                     </input>
                                                                 </div>
