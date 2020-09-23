@@ -86,7 +86,7 @@ try {
                         </li>
 
                         <li>
-                            <a href="map.html">
+                            <a href="carte.php">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
                     </ul>

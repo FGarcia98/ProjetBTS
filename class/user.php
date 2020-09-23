@@ -42,6 +42,12 @@ class user
         if ($userexist == 1) {
             $userinfo = $requser->fetch();
             $_SESSION['identifiant'] = $userinfo['identifiant'];
+            
+            if($userinfo['isadmin']==0){
+
+                echo"Vous etes connecter en tant que " . $_SESSION['identifiant'] ." cliquer ici" ?> <a href="home.php">pour acceder au site</a> <?php
+            }
+            
 
             if ($userinfo['isadmin'] == 1) // Proposition de mode admin si l'utilisateur en est un
             {

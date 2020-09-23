@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +14,13 @@
 </head>
 
 <body>
-<?php if(isset($_SESSION['identifiant']) == true){ ?> <!-- Si user existe alors la page s'affiche sinon error 404-->
+<?php 
+    
+    if(isset($_SESSION['identifiant']) == true){ ?>
+   
     <div id="mapid" style="width: 600px; height: 266px;float: right;"></div>
     <script>
-        var mymap = L.map('mapid').setView([49.8831379, 2.3030613], 10);
+        var mymap = L.map('mapid').setView([8.86578, -79.4971], 10);
 
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
             maxZoom: 18,
@@ -28,9 +32,9 @@
             zoomOffset: -1
         }).addTo(mymap);
 
-        L.marker([49.8831379, 2.3030613]).addTo(mymap);
+        L.marker([8.86578, -79.4971]).addTo(mymap);
 
-        L.circle([49.8831379, 2.3030613], {
+        L.circle([8.86578, -79.4971], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
